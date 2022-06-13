@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.geometry('1280x720+300+100')
-root.config(bg='lightblue')
+root.config(bg='lightgray')
 
 
 # borderwidth=20, relief='groove'
@@ -12,24 +12,29 @@ root.config(bg='lightblue')
 # class do layout
 class Layout():
     # função titulo,| nome da var, texto da var, cordenadas y, x |
+    @staticmethod
     def titulo(var, frame, text, y, x):
         var = Label(frame, bg='gray', text=text)
         var.grid(row=y, column=x, sticky=NSEW)
 
     # função caption,| nome da var, texto da var, cordenadas y, x |
+    @staticmethod
     def caption(var, frame, text, y, x):
         var = Label(frame, bg='gray', text=text)
         var.grid(row=y, column=x, sticky=NSEW)
 
+    @staticmethod
     def entry(var, frame, y, x, show=''):
         var = Entry(frame, show=show)
         var.grid(row=y, column=x, sticky=NSEW)
 
     # provavelmente nada e vai sair daqui
+    @staticmethod
     def button(var, frame, text, command, y, x):
         var = Button(frame, text=text, command=command)
         var.grid(row=y, column=x, sticky=NSEW)
 
+    @staticmethod
     def chckbttn(var, frame, text, y, x):
         var = Checkbutton(frame, bg='gray', text=text, width=15)
         var.grid(row=y, column=x, sticky=NSEW)
@@ -38,7 +43,8 @@ class Layout():
 # ==========================================================================
 # ========================== Primeira Tela =================================
 # ==========================================================================
-class Command():
+class Command:
+    @staticmethod
     def screen_one():
         # Limpa e cria o layout primeira tela
         Command.clear()
@@ -59,6 +65,7 @@ class Command():
     # ==========================================================================
     # ============================== Segunda Tela   ============================
     # ==========================================================================
+    @staticmethod
     def screen_two():
         # Limpa e cria o layout da segunda tela
         Command.clear()
@@ -116,11 +123,12 @@ class Command():
         Layout.button('sair', extra, 'Sair', Command.screen_one, 0, 1)
 
     # ==========================================================================
-
+    @staticmethod
     def clear():
         for widget in root.winfo_children():
             widget.destroy()
 
+    @staticmethod
     def grvr_dds():
         pass
 
