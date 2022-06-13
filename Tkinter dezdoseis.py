@@ -4,13 +4,12 @@ root = Tk()
 root.geometry('1280x720+300+100')
 root.config(bg='lightgray')
 
-
 # borderwidth=20, relief='groove'
 
 # ==========================================================================
 
 # class do layout
-class Layout():
+class Layout:
     # função titulo,| nome da var, texto da var, cordenadas y, x |
     @staticmethod
     def titulo(var, frame, text, y, x):
