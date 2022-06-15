@@ -79,77 +79,94 @@ class App(tk.Tk):
 
         self.curr_screen = None
 
-    def change_screen(self, count):
-
+    def screen_one(self):
         for widget in self.winfo_children():
             widget.destroy()
+        self.curr_screen = LoginScreen(self,True)
 
-        if count == 0:
-            self.curr_screen = LoginScreen(self, True)
-        if count == 1:
-            self.curr_screen = UserLoggedScreen(self, True)
-        if count == 2:
-            self.curr_screen = CreditsScreen(self, True)
-        if count == 3:
-            self.curr_screen = DepositScreen(self, True)
-        if count == 4:
-            self.curr_screen = WithdrawalScreen(self, True)
-        if count == 5:
-            self.curr_screen = TransferScreen(self, True)
+    def screen_two(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        self.curr_screen = UserLoggedScreen(self,True)
 
+    def screen_three(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        self.curr_screen = CreditsScreen(self,True)
+    def screen_four(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        self.curr_screen = DepositScreen(self,True)
+    def screen_five(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        self.curr_screen = WithdrawalScreen(self,True)
+    def screen_six(self):
+        for widget in self.winfo_children():
+            widget.destroy()
+        self.curr_screen = TransferScreen(self,True)
 
 class LoginScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            lbl = ttk.Label(root,text='Tela 1')
+            self.pack()
+            lbl = ttk.Label(self,text='Tela 1')
             lbl.pack()
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_two)
+            bttn.pack()
 
 class UserLoggedScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            print('2')
+            self.pack()
             lbl = ttk.Label(root,text='Tela 2')
             lbl.pack()
-
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_three)
+            bttn.pack()
 
 class CreditsScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            print('3')
+            self.pack()
             lbl = ttk.Label(root,text='Tela 3')
             lbl.pack()
-
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_four)
+            bttn.pack()
 
 class DepositScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            print('4')
+            self.pack()
             lbl = ttk.Label(root,text='Tela 4')
             lbl.pack()
-
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_five)
+            bttn.pack()
 
 class WithdrawalScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            print('5')
+            self.pack()
             lbl = ttk.Label(root,text='Tela 5')
             lbl.pack()
-
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_six)
+            bttn.pack()
 
 class TransferScreen(ttk.Frame):
     def __init__(self, root, Render=False):
         super().__init__(root)
         if Render:
-            print('6')
+            self.pack()
             lbl = ttk.Label(root,text='Tela 6')
             lbl.pack()
-
+            bttn = ttk.Button(self,text='Mudar tela', command= app.screen_one)
+            bttn.pack()
 
 if __name__ == '__main__':
     app = App()
+    app.screen_one()
     app.mainloop()
