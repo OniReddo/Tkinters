@@ -75,34 +75,32 @@ class App(tk.Tk):
 
         self.curr_screen = None
 
-    def screen_one(self):
+    def clear(self):
         for widget in self.winfo_children():
             widget.destroy()
+
+    def screen_one(self):
+        self.clear()
         self.curr_screen = LoginScreen(self, True)
 
     def screen_two(self):
-        for widget in self.winfo_children():
-            widget.destroy()
+        self.clear()
         self.curr_screen = UserLoggedScreen(self, True)
 
     def screen_three(self):
-        for widget in self.winfo_children():
-            widget.destroy()
+        self.clear()
         self.curr_screen = CreditsScreen(self, True)
 
     def screen_four(self):
-        for widget in self.winfo_children():
-            widget.destroy()
+        self.clear()
         self.curr_screen = DepositScreen(self, True)
 
     def screen_five(self):
-        for widget in self.winfo_children():
-            widget.destroy()
+        self.clear()
         self.curr_screen = WithdrawalScreen(self, True)
 
     def screen_six(self):
-        for widget in self.winfo_children():
-            widget.destroy()
+        self.clear()
         self.curr_screen = TransferScreen(self, True)
 
 
