@@ -62,7 +62,7 @@ class Client:
         if transfer == 3:
             self.history.append(f'Transfer of {amount} to acount{who}')
 
-        # Ui/Hus stuff
+# UI/HUD stuff
 
 
 class App(tk.Tk):
